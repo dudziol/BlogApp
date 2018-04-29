@@ -61,6 +61,18 @@ app.get("/blogs/:id", function(req, res){
     });
 });
 
+// EDIT ROUTE
+app.get("/blogs/:id/edit", function(req, res){
+    Blog.findById(req.params.id, function(err, foundBlog){
+        if(err){
+            res.redirect("/blogs");
+        } else {
+             res.render("edit", {blog: foundBlog});
+        }
+    });
+   
+});
+
 app.listen(3000, function(){
     console.log("The server is running!");
 })
