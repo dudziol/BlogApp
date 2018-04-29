@@ -73,6 +73,11 @@ app.get("/blogs/:id/edit", function(req, res){
    
 });
 
+// UPDATE ROUTE
+app.put("/blogs/:id", function(req, res){
+    res.send("UPDATE ROUTE")
+});
+
 app.listen(3000, function(){
     console.log("The server is running!");
 })
